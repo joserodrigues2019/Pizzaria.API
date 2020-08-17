@@ -9,5 +9,6 @@ namespace Pizzaria.API.Domain.Repositories
     public interface IEnderecosClientesRepository
     {
         Task<EnderecosClientesEntity> FindByIdAsync(int idCliente);
+        IQueryable GetEndCliente(int idCliente);
     }
 }

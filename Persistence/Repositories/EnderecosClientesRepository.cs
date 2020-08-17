@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pizzaria.API.Persistence.Repositories
 {
-    public class EnderecosClientesRepository: BaseRepository, IEnderecosClientesRepository
+    public class EnderecosClientesRepository : BaseRepository, IEnderecosClientesRepository
     {
         public EnderecosClientesRepository(AppDbContext context) : base(context)
         {
@@ -18,6 +18,13 @@ namespace Pizzaria.API.Persistence.Repositories
         public async Task<EnderecosClientesEntity> FindByIdAsync(int idCliente)
         {
             return await _context.EnderecoClientes.FindAsync(idCliente);
+        }
+
+        public IQueryable GetEndCliente(int idCliente)
+        {
+            var ret = _context.EnderecoClientes.Where(p => p.IdCliente == idCliente);
+
+            return ret;
         }
     }
 }

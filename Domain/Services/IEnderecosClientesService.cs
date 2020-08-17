@@ -8,6 +8,6 @@ namespace Pizzaria.API.Domain.Services
 {
     public interface IEnderecosClientesService
     {
-        Task<EnderecosClientesEntity> GetEnderecoCliente(int id);
+        IQueryable GetEnderecoCliente(int id);
     }
 }

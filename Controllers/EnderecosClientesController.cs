@@ -21,9 +21,9 @@ namespace Pizzaria.API.Controllers
 
         // GET: api/EnderecosClientesEntity
         [HttpGet("{id}")]
-        public async Task<EnderecosClientesEntity> GetEnderecoCliente(int id)
+        public IQueryable GetEnderecoCliente(int id)
         {
-            var retEndereco = await _enderecoClienteService.GetEnderecoCliente(id);
+            var retEndereco = _enderecoClienteService.GetEnderecoCliente(id);
 
             return retEndereco;
         }

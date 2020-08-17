@@ -18,9 +18,9 @@ namespace Pizzaria.API.Services
             _enderecosClientesRepository = enderecosClientesRepository;
         }
 
-        public async Task<EnderecosClientesEntity> GetEnderecoCliente(int idCliente)
+        public IQueryable GetEnderecoCliente(int idCliente)
         {
-            var ret =  await _enderecosClientesRepository.FindByIdAsync(idCliente);
+            var ret = _enderecosClientesRepository.GetEndCliente(idCliente);
 
             return ret;
         }

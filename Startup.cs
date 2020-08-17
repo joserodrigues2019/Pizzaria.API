@@ -38,6 +38,9 @@ namespace Pizzaria.API
             services.AddScoped<IClientesRepository, ClientesRepository>();
             services.AddScoped<IClientesService, ClientesService>();
 
+            services.AddScoped<IEnderecosClientesRepository, EnderecosClientesRepository>();
+            services.AddScoped<IEnderecosClientesService, EnderecosClientesService>();
+
             services.AddScoped<IPedidosRepository, PedidosRepository>();
             services.AddScoped<IPedidosService, PedidosService>();
 
